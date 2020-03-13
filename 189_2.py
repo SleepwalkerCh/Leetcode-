@@ -1,6 +1,6 @@
 #189. Rotate Array
-#一步步移动，直接做会超时 v1.1
-#分左移右移做,还是会超时 v1.2
+# 直接拼凑list 空间使用量过大
+# 
 
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
@@ -9,4 +9,7 @@ class Solution:
         """
         k=k%len(nums)
         temp=nums[-k:]
-        return temp+nums
+        nums[:]=temp[:]+nums[:-k]
+        return 
+#Runtime: 60 ms, faster than 80.72% of Python3 online submissions for Rotate Array.
+#Memory Usage: 14.1 MB, less than 5.09% of Python3 online submissions for Rotate Array.
