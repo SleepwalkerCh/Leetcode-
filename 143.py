@@ -10,4 +10,12 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        
+        self.head=head
+        self.new=ListNode(0)
+        self.newhead=self.new
+    def reverse(self,head):
+        if head==None:
+            return 
+        else:
+            self.reverse(head.next)
+            self.newhead.next=head
